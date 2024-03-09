@@ -1,0 +1,18 @@
+
+/* styles.css or your Tailwind CSS file */
+
+/* Apply styles for medium screens and larger */
+@media (min-width: 768px) {
+    /* Your styles for medium screens and larger go here */
+    .sticky{
+        position: sticky; top: 0;
+    }
+}
+
+/* Apply styles for large screens and larger */
+@media (min-width: 1024px) {
+    /* Your styles for large screens and larger go here */
+    .sticky{
+        position: sticky; top: 0;
+    }
+}

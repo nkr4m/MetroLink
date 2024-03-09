@@ -1,0 +1,107 @@
+<!-- <header class="header-2">
+    <div class="page-header min-vh-70 relative" style="background-image: url('../assets/bg_img.jpg')">
+        <span class="mask bg-gradient-secondary opacity-7"></span>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 text-center mx-auto">
+                    <h1 class="text-white mt-n9 border-0" style="font-weight: bolder; font-size: 48px; text-shadow: 2px 2px 4px #000;">MetroLink.</h1>
+                    <p class="lead text-white mt-3">MetroLink is an optimized travel guide for effective navigation for Delhi metro. Make use of a modified Dijkstra's algorithm to find the most optimal route from source to destination.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="card card-body shadow-blur mx-2 mx-md-2 mt-n10 mb-n10">
+    <section class="pt-3 pb-4" id="count-stats">
+        <p-toast position="bottom-center"></p-toast>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mx-auto py-3">
+                    <div class="row">
+                        <div class="col-md-4 position-relative">
+                            <div class="position-sticky pb-lg-5 pb-3 ps-2" style="top: 100px">
+                                <div class="card shadow-lg p-3 bg-body-tertiary rounded border-0">
+                                    <h1 class="text-center text-black border-0" style="font-weight: bolder; font-size: 32px; text-shadow: 2px 2px 4px rgb(255, 255, 255);">MetroLink Search.</h1>
+                                    <div class="card-body">
+                                        <form [formGroup]="searchForm" (ngSubmit)="search()">
+                                            <div class="form-floating mb-2">
+                                                <select class="form-select" formControlName="departure"
+                                                    id="floatingSelect" aria-label="Floating label select example">
+                                                    <option selected value="na">Select a departure</option>
+                                                    @for(station of StationsInfo; track station){
+                                                    <option value={{station.stationCode}}>{{station.stationName}}
+                                                    </option>
+                                                    }
+                                                </select>
+                                                <label for="floatingSelect">Works with selects</label>
+                                            </div>
+
+                                            <div class="form-floating mb-2">
+                                                <select class="form-select" formControlName="arrival"
+                                                    id="floatingSelect" aria-label="Floating label select example">
+                                                    <option selected value="na">Select an arrival</option>
+                                                    @for(station of StationsInfo; track station){
+                                                    <option value={{station.stationCode}}>{{station.stationName}}
+                                                    </option>
+                                                    }
+                                                </select>
+                                                <label for="floatingSelect">Works with selects</label>
+                                            </div>
+
+                                            <button type="submit" class="btn bg-gradient-dark w-100">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 position-relative">
+                            <div class="col-12">
+                                <div class="position-sticky pb-lg-5 pb-3 mt-lg-0 ps-2" style="top: 100px">
+                                    <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded border-0">
+                                        <div class="card-body">
+
+                                            <p-timeline [value]="result" class="w-full md:w-20rem" align="alternate">
+
+                                                <ng-template pTemplate="marker" let-event>
+                                                    <span class="custom-marker shadow-2">
+                                                        <mat-icon>radio_button_checked</mat-icon>
+                                                    </span>
+                                                </ng-template>
+
+                                                <ng-template pTemplate="content" let-result>
+                                                    {{result.stationName}}
+                                                </ng-template>
+                                            </p-timeline>
+
+
+                                            @for(res of result; track res){
+                                                <p></p>
+                                                
+                                            }@empty{
+                                                No Active Search...
+                                            }
+                                            
+                                            
+                                               
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</div> -->
+<app-header></app-header>
+<div [@routeTransition]="getRouterOutletState(o)">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
